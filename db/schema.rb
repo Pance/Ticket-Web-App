@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120602191253) do
+ActiveRecord::Schema.define(:version => 20120602221029) do
+
+  create_table "attractions", :force => true do |t|
+    t.integer  "sequence"
+    t.string   "artist"
+    t.integer  "artistid"
+    t.string   "billing"
+    t.string   "links"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "genre"
+  end
 
   create_table "events", :force => true do |t|
     t.integer  "facebookeventid"
