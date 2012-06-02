@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  facebookeventid: 
+  eventname: MyString
+  description: MyString
+  eventurl: MyString
+  additionallistingtext: MyString
+  status: MyString
+  tags: MyString
+  dates: MyString
+  venue: 
+  eventimages: MyString
+  prices: MyString
+  attractionList: MyString
+
+two:
+  facebookeventid: 
+  eventname: MyString
+  description: MyString
+  eventurl: MyString
+  additionallistingtext: MyString
+  status: MyString
+  tags: MyString
+  dates: MyString
+  venue: 
+  eventimages: MyString
+  prices: MyString
+  attractionList: MyString

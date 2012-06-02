@@ -5,18 +5,18 @@
 #   gem 'sqlite3'
 
 defaults: &defaults
-	adapter: mysql
-	username: localuser
-	password: localuserpassword
-	host: localhost
-	port: 3306
+  adapter: mysql2
+  username: localuser
+  password: localuserpassword
+  host: localhost
+  port: 3306
 
 development:
 #  database: db/development.sqlite3
 #  pool: 5
 #  timeout: 5000
-	<<: *defaults
-	database: db/dev_db
+  <<: *defaults
+  database: db/dev_db
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -25,12 +25,12 @@ test:
 #  database: db/test.sqlite3
 #  pool: 5
 #  timeout: 5000
-	<<: *defaults
-	database: db/test_db
+  <<: *defaults
+  database: db/test_db
 
 production:
 #  database: db/production.sqlite3
 #  pool: 5
 #  timeout: 5000
-	<<: *defaults
-	database: db/prod_db
+  <<: *defaults
+  database: db/prod_db
