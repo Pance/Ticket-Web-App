@@ -6,7 +6,6 @@ gem 'rails', '3.2.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'heroku'
-gem 'mysql2'
 gem 'json'
 
 
@@ -23,6 +22,7 @@ group :assets do
 end
 
 group :development do
+	gem 'mysql2'
 	gem 'rspec-rails'
 	gem 'spork'
 	gem 'guard-rspec'
@@ -33,6 +33,10 @@ group :test do
 	gem 'growl'
 	gem 'guard-spork'
 	gem 'spork'
+end
+
+group :production do
+	gem 'pg'
 end
 
 gem 'jquery-rails'
