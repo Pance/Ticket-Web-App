@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120603215734) do
+ActiveRecord::Schema.define(:version => 20120604013414) do
 
   create_table "attractions", :force => true do |t|
     t.integer  "sequence"
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(:version => 20120603215734) do
   create_table "events", :force => true do |t|
     t.integer  "facebookeventid"
     t.string   "eventname"
-    t.string   "description"
     t.string   "eventurl"
     t.string   "additionallistingtext"
     t.string   "status"
@@ -37,12 +36,12 @@ ActiveRecord::Schema.define(:version => 20120603215734) do
     t.string   "dates"
     t.string   "eventimages"
     t.string   "prices"
-    t.string   "attractionList"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
     t.integer  "venueid"
     t.string   "videoembed"
     t.string   "attractions"
+    t.text     "description"
   end
 
   create_table "venues", :force => true do |t|

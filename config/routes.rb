@@ -1,4 +1,9 @@
 TicketwebApp::Application.routes.draw do
+
+  get "events/new"
+
+	resources :events
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,8 @@
+<% provide(:title, @event.eventname) %>
+<%= link_to "Back to Events index", events_path %>
+<h1><%= @event.eventname %></h1>
+<h2><%= @event.dates["startdate"] %> -> <%= Time.at(Integer(@event.dates["enddate"])) %></h2>
+<h3><%= link_to "Event Link", @event.eventurl %></h3>
+<p>
+<%= raw(@event.description) %>
+</p>
