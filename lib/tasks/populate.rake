@@ -39,22 +39,28 @@ namespace :populate do
 			if page != 1
 				uri = URI(ticketweb_api + page.to_s)
 				res = Net::HTTP.get(uri)
-				parsed_json = JSON.parse(res)
-			end
-
-			parsed_json["events"].each do |e|
-				existing_event = Event.find_by_id(e["eventid"])
-				if existing_event == nil
-					new_event = Event.new(e)
-					new_event.save
-				else
-					existing_event.update_attributes(e)
+				if /the system is currently unavailable/.match(res) == nil
+					parsed_json = JSON.parse(res)
+				else 
+					parsed_json = nil
 				end
 			end
 
+			unless parsed_json == nil
+				parsed_json["events"].each do |e|
+					existing_event = Event.find_by_id(e["eventid"])
+					if existing_event == nil
+						new_event = Event.new(e)
+						new_event.save
+					else
+						existing_event.update_attributes(e)
+					end
+				end
+				sleep 5
+			end #end of unless
+
 			page+=1
-			#puts "***PAGE " + page.to_s
-			sleep 5
+			puts "***PAGE " + page.to_s
 			
 		end #end of while loop
 

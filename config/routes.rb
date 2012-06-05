@@ -1,6 +1,6 @@
 TicketwebApp::Application.routes.draw do
 
-  get "events/new"
+	root :to => 'events#index'	
 
 	resources :events
 
